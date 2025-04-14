@@ -1,0 +1,302 @@
+local DarkraiX = loadstring(game:HttpGet("https://raw.githubusercontent.com/GamingScripter/Kavo-Ui/main/Darkrai%20Ui", true))()
+
+local Library = DarkraiX:Window("Slab Hub","","",Enum.KeyCode.RightControl);
+
+Tab1 = Library:Tab("ESP")
+
+Tab1:Button("esp key bind V",function()
+  loadstring(game:HttpGet('https://pastebin.com/raw/WRWLjgiD'))()
+end)
+
+Tab1:Button("Esp",function()
+  loadstring(game:HttpGet('https://pastebin.com/raw/QSX8baBn'))()
+end)
+
+Tab1:Button("HitboxHead",function()
+  loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Universal-Hitbox-Expander-V2-31129"))()
+end)
+
+Tab1:Button("chams me",function()
+  loadstring(game:HttpGet('https://pastebin.com/raw/tFYDiFy0'))()
+end)
+
+Tab2 = Library:Tab("miscellaneous")
+
+Tab2:Button("ChinaHat",function()
+  loadstring(game:HttpGet('https://pastebin.com/raw/TePYk91W'))()
+end)
+
+Tab2:Button("4:3",function()
+  local camera = workspace.CurrentCamera
+local settings = {
+    ["Aspect Ratio"] = true, --// leave it like this if i don't know what You're doing
+    ["Ratio Value"] = 0.6 --// leave it like this if i don't know what You're doing
+}
+
+local oldNewindex
+
+oldNewindex = hookmetamethod(game, "__newindex", function(object, propertyName, propertyValue)
+    if object == camera and propertyName == "CFrame" then
+        if settings["Aspect Ratio"] then
+            propertyValue = propertyValue * CFrame.new(0, 0, 0, 1, 0, 0, 0, settings["Ratio Value"], 0, 0, 0, 1)
+        end
+    end
+    return oldNewindex(object, propertyName, propertyValue)
+end)
+end)
+
+Tab2:Toggle("Fullbright",function()
+  loadstring(game:HttpGet('https://pastebin.com/raw/K6LifFtr'))()   
+end)
+
+Tab2:Button("rtx",function()
+  loadstring(game:HttpGet('https://pastebin.com/raw/x0SkragG'))()
+end)
+
+Tab2:Button("Fly My Ban risk",function()
+  loadstring(game:HttpGet('https://pastebin.com/raw/CYa9Zd7L'))()
+end)
+
+Tab3 = Library:Tab("EspItem")
+
+Tab3:Button("Copter",function()
+  local ESP = loadstring(game:HttpGet("https://kiriot22.com/releases/ESP.lua"))()
+
+-- config
+ESP.Players = false
+ESP.Boxes = false
+ESP.Names = true
+ESP:Toggle(true)
+
+-- object
+ESP:AddObjectListener(Workspace.Minicopter, { -- Object Path, For example: Workspace.ThisFolder
+    Name = "Base", --Object name inside of the path, for example: Workspace.ThisFolder.Item_1
+    CustomName = "copter", -- Name you want to be displayed
+    Color = Color3.fromRGB(140, 0, 10), -- Color
+    IsEnabled = "whatever" -- Any name, has to be the same as the last line: ESP.TheNameYouWant
+})
+ESP.whatever = true
+end)
+
+Tab3:Button("Hemp",function()
+  -- loadstring
+local ESP = loadstring(game:HttpGet("https://kiriot22.com/releases/ESP.lua"))()
+
+-- config
+ESP.Players = false
+ESP.Boxes = false
+ESP.Names = true
+ESP:Toggle(true)
+
+-- object
+ESP:AddObjectListener(Workspace.Hemp, { -- Object Path, For example: Workspace.ThisFolder
+    Name = "Hemp", --Object name inside of the path, for example: Workspace.ThisFolder.Item_1
+    CustomName = "Hemp", -- Name you want to be displayed
+    Color = Color3.fromRGB(0, 200, 150), -- Color
+    IsEnabled = "whatever" -- Any name, has to be the same as the last line: ESP.TheNameYouWant
+})
+ESP.whatever = true
+end)
+
+Tab3:Button("Stone",function()
+  -- loadstring
+local ESP = loadstring(game:HttpGet("https://kiriot22.com/releases/ESP.lua"))()
+
+-- config
+ESP.Players = false
+ESP.Boxes = false
+ESP.Names = true
+ESP:Toggle(true)
+
+-- object
+ESP:AddObjectListener(Workspace.ores, { -- Object Path, For example: Workspace.ThisFolder
+    Name = "stone", --Object name inside of the path, for example: Workspace.ThisFolder.Item_1
+    CustomName = "stone", -- Name you want to be displayed
+    Color = Color3.fromRGB(0, 200, 150), -- Color
+    IsEnabled = "whatever" -- Any name, has to be the same as the last line: ESP.TheNameYouWant
+ })
+ESP.whatever = true
+end)
+
+Tab3:Button("SUlfur",function()
+  -- loadstring
+local ESP = loadstring(game:HttpGet("https://kiriot22.com/releases/ESP.lua"))()
+
+-- config
+ESP.Players = false
+ESP.Boxes = false
+ESP.Names = true
+ESP:Toggle(true)
+
+-- object
+ESP:AddObjectListener(Workspace.ores, { -- Object Path, For example: Workspace.ThisFolder
+    Name = "Sulfur", --Object name inside of the path, for example: Workspace.ThisFolder.Item_1
+    CustomName = "Sulfur", -- Name you want to be displayed
+    Color = Color3.fromRGB(0, 200, 150), -- Color
+    IsEnabled = "whatever" -- Any name, has to be the same as the last line: ESP.TheNameYouWant
+})
+ESP.whatever = true
+end)
+
+Tab3:Button("Iron",function()
+  -- loadstring
+local ESP = loadstring(game:HttpGet("https://kiriot22.com/releases/ESP.lua"))()
+
+-- config
+ESP.Players = false
+ESP.Boxes = false
+ESP.Names = true
+ESP:Toggle(true)
+
+-- object
+ESP:AddObjectListener(Workspace.ores, { -- Object Path, For example: Workspace.ThisFolder
+    Name = "iron", --Object name inside of the path, for example: Workspace.ThisFolder.Item_1
+    CustomName = "iron", -- Name you want to be displayed
+    Color = Color3.fromRGB(0, 200, 150), -- Color
+    IsEnabled = "whatever" -- Any name, has to be the same as the last line: ESP.TheNameYouWant
+})
+ESP.whatever = true
+end)
+
+Tab4 = Library:Tab("Bypass")
+
+Tab4:Button("WalkSpeed",function()
+  game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 25
+end)
+
+Tab4:Button("Fov 120",function()
+  local FovNumber = 120 --Enter your FOV number here
+local Camera = workspace.CurrentCamera
+Camera.FieldOfView = FovNumber
+end)
+
+Tab4:Button("Noclip",function()
+  loadstring(game:HttpGet("https://raw.githubusercontent.com/FransizALWAYS/NoClip/refs/heads/main/V1"))()
+end)
+
+Tab4:Button("infJump",function()
+  loadstring(game:HttpGet("https://pastefy.app/o3x1u9ZN/raw"))()
+end)
+
+Tab4:Button("SpinBot",function()
+  loadstring(game:HttpGet('https://pastebin.com/raw/Pqve0wi8'))()
+end)
+
+Tab5 = Library:Tab("Crosshairs")
+
+Tab5:Button("卍 spin",function()
+  local ScreenGui = Instance.new("ScreenGui")
+local Crosshair = Instance.new("Frame")
+
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui.ResetOnSpawn = false
+
+Crosshair.Name = "Crosshair"
+Crosshair.Parent = ScreenGui
+Crosshair.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Crosshair.Position = UDim2.new(0.5, -15, 0.42, -15)
+Crosshair.Size = UDim2.new(0, 30, 0, 30)
+Crosshair.BackgroundTransparency = 1
+
+local text = Instance.new("TextLabel")
+text.Parent = Crosshair
+text.BackgroundTransparency = 1
+text.Size = UDim2.new(1, 0, 1, 0)
+text.Text = "卍"
+text.TextSize = 30
+text.Font = Enum.Font.SourceSansBold
+
+local rotation = 0
+local hue = 0
+
+game:GetService("RunService").RenderStepped:Connect(function()
+    Crosshair.Position = UDim2.new(0.5, -15, 0.42, -15)
+    
+    -- Вращение
+    rotation = rotation + 4
+    text.Rotation = rotation
+    
+    -- Изменение цвета
+    hue = (hue + 1) % 360
+    local color = Color3.fromHSV(hue/360, 1, 1)
+    text.TextColor3 = color
+end)
+end)
+
+Tab5:Button("ة spin",function()
+  local ScreenGui = Instance.new("ScreenGui")
+local Crosshair = Instance.new("Frame")
+
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui.ResetOnSpawn = false
+
+Crosshair.Name = "Crosshair"
+Crosshair.Parent = ScreenGui
+Crosshair.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Crosshair.Position = UDim2.new(0.5, -15, 0.42, -15)
+Crosshair.Size = UDim2.new(0, 30, 0, 30)
+Crosshair.BackgroundTransparency = 1
+
+local text = Instance.new("TextLabel")
+text.Parent = Crosshair
+text.BackgroundTransparency = 1
+text.Size = UDim2.new(1, 0, 1, 0)
+text.Text = "ة"
+text.TextSize = 30
+text.Font = Enum.Font.SourceSansBold
+
+local rotation = 0
+local hue = 0
+
+game:GetService("RunService").RenderStepped:Connect(function()
+    Crosshair.Position = UDim2.new(0.5, -15, 0.42, -15)
+    
+    -- Вращение
+    rotation = rotation + 4
+    text.Rotation = rotation
+    
+    -- Изменение цвета
+    hue = (hue + 1) % 360
+    local color = Color3.fromHSV(hue/360, 1, 1)
+    text.TextColor3 = color
+end)
+end)
+
+Tab5:Button("+ spin",function()
+  local ScreenGui = Instance.new("ScreenGui")
+local Crosshair = Instance.new("Frame")
+
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui.ResetOnSpawn = false
+
+Crosshair.Name = "Crosshair"
+Crosshair.Parent = ScreenGui
+Crosshair.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Crosshair.Position = UDim2.new(0.5, -15, 0.42, -15)
+Crosshair.Size = UDim2.new(0, 30, 0, 30)
+Crosshair.BackgroundTransparency = 1
+
+local text = Instance.new("TextLabel")
+text.Parent = Crosshair
+text.BackgroundTransparency = 1
+text.Size = UDim2.new(1, 0, 1, 0)
+text.Text = "+"
+text.TextSize = 30
+text.Font = Enum.Font.SourceSansBold
+
+local rotation = 0
+local hue = 0
+
+game:GetService("RunService").RenderStepped:Connect(function()
+    Crosshair.Position = UDim2.new(0.5, -15, 0.42, -15)
+    
+    -- Вращение
+    rotation = rotation + 2
+    text.Rotation = rotation
+    
+    -- Изменение цвета
+    hue = (hue + 1) % 360
+    local color = Color3.fromHSV(hue/360, 1, 1)
+    text.TextColor3 = color
+end)
+end)
